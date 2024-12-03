@@ -8,9 +8,9 @@ client = MongoClient(MONGO_URI)
 db = client['Centros']
 
 # Funcion con parametro de entrada diccionario
-def guardar_centros_mongo(universidades:dict):
+def guardar_centros_mongo(universidades:list):
     print(universidades)
-    if not isinstance(universidades, dict) or not universidades:
+    if not isinstance(universidades, list) or not universidades:
         raise ValueError("El argumento 'universidades' debe ser un diccionario no vacío")
     collection = db['Centros']
     try:
